@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <script type="module" crossorigin src="./assets/polyfills-Dsx7USdx.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="数独" />
+    <link rel="apple-touch-icon" href="./icon-180.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#00236f" />
+    <title>信为美数独 | Zenith Sudoku</title>
+    <style>
+      :root { --safe-top: 0px; --safe-bot: 0px; }
+      @supports (padding-top: env(safe-area-inset-top)) {
+        :root { --safe-top: env(safe-area-inset-top); --safe-bot: env(safe-area-inset-bottom); }
+      }
+      body { padding-top: max(20px, var(--safe-top)); }
+    </style>
+    <script type="module" crossorigin src="./assets/index-5A7zXtsj.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-wdCE_Sf4.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // The native WebView already loads every file from its application bundle.
+      const hosted = location.protocol === "https:" ||
+        (location.protocol === "http:" && ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname));
+      if (hosted && !globalThis.__ZENITH_NATIVE_APP__ && "serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./sw.js", {updateViaCache: "none"}).catch(() => {});
+      }
+    </script>
+  </body>
+</html>
+
